@@ -1,7 +1,14 @@
-// import Head from 'next/head';
+import {
+  Heading,
+  Grid,
+  Flex,
+  Button,
+  Text,
+  Avatar,
+  AvatarGroup,
+} from '@chakra-ui/core';
 
-import { Heading, Grid, Flex, Link, Button, Text } from '@chakra-ui/core';
-import Divider from '../components/Divider';
+import Link from 'next/link';
 import Input from '../components/Input';
 
 export default function Home() {
@@ -20,71 +27,40 @@ export default function Home() {
       alignItems="center"
     >
       <Flex gridArea="logo" flexDir="column" alignItems="flex-start">
-        <img src="/rocketseat.svg" alt="Rocketseat" />
+        <Heading size="xl" lineHeight="bold" fontWeight="800" color="green.400">
+          Coinfolio
+        </Heading>
 
-        <Heading size="2xl" lineHeight="shorter" marginTop="=">
-          Join our brand new NextJS platform
+        <Heading size="2xl" lineHeight="shorter" marginTop={2}>
+          Built with Chakra UI
+          <aside />
+          and NextJS
+          <AvatarGroup size="md" max={4}>
+            <Avatar
+              name="Leonardo Jaques"
+              src="./leo.jpg
+              "
+            />
+            <Avatar name="NextJS" src="./nextjs.jpg" />
+            <Avatar name="Chakra UI" src="./chakra.jpg" />
+          </AvatarGroup>
         </Heading>
       </Flex>
 
-      <Flex
-        gridArea="form"
-        height="100%"
-        backgroundColor="gray.700"
-        borderRadius="md"
-        flexDir="column"
-        alignItems="stretch"
-        padding={16}
-      >
-        <Input placeholder="Email" />
-        <Input placeholder="Password" marginTop={2} />
-        <Link
-          alignSelf="flex-start"
-          marginTop={2}
-          fontSize="sm"
-          color="purple.600"
-          fontWeight="bold"
-          _hover={{ color: 'purple.500' }}
-        >
-          Forgot password?
-        </Link>
+      <Flex gridArea="form" flexDir="column" alignItems="stretch" padding={16}>
+        <Input placeholder="Your name" />
 
-        <Button
-          marginTop={6}
-          backgroundColor="purple.500"
-          height="50px"
-          borderRadius="sm"
-          _hover={{ backgroundColor: 'purple.600' }}
-        >
-          LOG IN
-        </Button>
-
-        <Text textAlign="center" fontSize="sm" color="gray.300" marginTop={6}>
-          Don't have an account?{' '}
-          <Link
-            color="purple.600"
-            fontWeight="bold"
-            _hover={{ color: 'purple.500' }}
-          >
-            Sign up
-          </Link>
-        </Text>
-
-        <Divider />
-
-        <Flex alignItems="center">
-          <Text fontSize="sm">Or enter with</Text>
+        <Link href="/main">
           <Button
+            marginTop={6}
+            backgroundColor="green.500"
             height="50px"
-            flex="1"
-            backgroundColor="gray.600"
-            marginLeft={6}
             borderRadius="sm"
-            _hover={{ backgroundColor: 'purple.500' }}
+            _hover={{ backgroundColor: 'green.600' }}
           >
-            GITHUB
+            ENTER
           </Button>
-        </Flex>
+        </Link>
       </Flex>
     </Grid>
   );
