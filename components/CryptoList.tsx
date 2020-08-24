@@ -34,7 +34,7 @@ export default function CryptoList() {
     .map((coin, index) => {
       return index !== 2 && `${coin.price} `;
     })
-    .filter((item) => item !== false);
+    .filter((item) => typeof item !== 'boolean');
   // console.log('arrOfPrices', arrOfPrices);
   // makes only 2 decimals show
   const decimalPrices = arrOfPrices.map((item) => {
