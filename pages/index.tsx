@@ -1,24 +1,26 @@
 import {
   Heading,
   Grid,
+  Box,
   Flex,
   Button,
-  Text,
   Avatar,
   AvatarGroup,
 } from '@chakra-ui/core';
-
 import Link from 'next/link';
+
 import Input from '../components/Input';
+import RainbowLine from '../components/RainbowLine';
 
 export default function Home() {
   return (
     <Grid
       as="main"
-      height="100vh"
+      height="95vh"
       templateColumns="1fr 480px 480px 1fr"
-      templateRows="1fr 480px 1fr"
+      templateRows="10px 1fr 480px 1fr"
       templateAreas="
+        'line line line line'
         '. . . .'
         '. logo form .'
         '. . . .'
@@ -26,8 +28,9 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
-      <Flex gridArea="logo" flexDir="column" alignItems="flex-start">
-        <Heading size="xl" lineHeight="bold" fontWeight="800" color="green.400">
+      <RainbowLine />
+      <Box gridArea="logo" flexDir="column" alignItems="flex-start">
+        <Heading size="2xl" lineHeight="bold" fontWeight="600" color="pink.700">
           Coinfolio
         </Heading>
 
@@ -45,18 +48,18 @@ export default function Home() {
             <Avatar name="Chakra UI" src="./chakra.jpg" />
           </AvatarGroup>
         </Heading>
-      </Flex>
+      </Box>
 
       <Flex gridArea="form" flexDir="column" alignItems="stretch" padding={16}>
-        <Input placeholder="Your name" />
+        <Input className="outline" placeholder="Your name" />
 
         <Link href="/main">
           <Button
             marginTop={6}
-            backgroundColor="green.500"
+            backgroundColor="pink.700"
             height="50px"
             borderRadius="sm"
-            _hover={{ backgroundColor: 'green.600' }}
+            _hover={{ backgroundColor: 'pink.600' }}
           >
             ENTER
           </Button>

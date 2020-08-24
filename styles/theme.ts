@@ -20,16 +20,26 @@ const customTheme: DefaultTheme = {
   },
   colors: {
     ...theme.colors,
-    purple: {
-      ...theme.colors.purple,
-      500: '#8257e5',
-    },
     gray: {
       ...theme.colors.gray,
+      200: '#e2e8f0',
       300: '#e1e1e6',
       600: '#29292e',
       700: '#202024',
       800: '#121214',
+    },
+    blue: {
+      ...theme.colors.blue,
+      500: '#0068ff',
+    },
+    pink: {
+      ...theme.colors.pink,
+      400: '#ff9cf9',
+      700: '#f50a81',
+    },
+    purple: {
+      ...theme.colors.purple,
+      500: '#9d09db',
     },
   },
 };
