@@ -24,9 +24,9 @@ export default function CryptoList() {
     // maps over it, and turn index 2 into false (USDT)
     .map((coin, index) => {
       return index !== 2 && `${coin.symbol} `;
-    })
-    // when false, don't show it
-    .filter((item) => item !== false);
+    });
+  // when false, don't show it
+  // .filter((item) => item !== false);
   // console.log('arrOfSymbols', arrOfSymbols);
 
   const arrOfPrices = coins
@@ -41,19 +41,15 @@ export default function CryptoList() {
     return `$${Number(item).toFixed(2)} `;
   });
 
-  const arrOfChanges = coins
-    .slice(0, 11)
-    .map((coin, index) => {
-      return index !== 2 && `${coin.change} `;
-    })
-    .filter((item) => item !== false);
+  const arrOfChanges = coins.slice(0, 11).map((coin, index) => {
+    return index !== 2 && `${coin.change} `;
+  });
+  // .filter((item) => item !== false);
 
-  const arrOfImages = coins
-    .slice(0, 11)
-    .map((coin, index) => {
-      return index !== 2 && `${coin.iconUrl} `;
-    })
-    .filter((item) => item !== false);
+  const arrOfImages = coins.slice(0, 11).map((coin, index) => {
+    return index !== 2 && `${coin.iconUrl} `;
+  });
+  // .filter((item) => item !== false);
 
   // const Photo = arrOfImages.map((image) => {
   //   <Image src={arrOfImages} />;
