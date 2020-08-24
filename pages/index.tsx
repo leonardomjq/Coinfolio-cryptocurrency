@@ -11,6 +11,7 @@ import Link from 'next/link';
 
 import Input from '../components/Input';
 import RainbowLine from '../components/RainbowLine';
+import Emoji from '../components/Emoji';
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
       <RainbowLine />
       <Box gridArea="logo" flexDir="column" alignItems="flex-start">
         <Heading size="2xl" lineHeight="bold" fontWeight="600" color="pink.700">
-          Coinfolio
+          Coinfolio <Emoji symbol="🏳️‍🌈" />
         </Heading>
 
         <Heading size="2xl" lineHeight="shorter" marginTop={2}>

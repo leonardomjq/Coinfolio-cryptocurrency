@@ -12,12 +12,12 @@ export default function Main() {
       <Grid
         as="main"
         height="90vh"
-        templateColumns="1fr 640px 1fr"
-        templateRows="10px 1fr 500px 1fr"
+        templateColumns="1fr 730px 1fr"
+        templateRows="10px 1fr 550px 1fr"
         templateAreas="
           'line line line line'
           '. . . .'
-          '. list . .'
+          '. heading . .'
           '. coins . .'
         "
         backgroundColor="gray.200"
@@ -30,10 +30,11 @@ export default function Main() {
           fontWeight="700"
           alignItems="center"
           justifyContent="center"
-          gridArea="list"
+          gridArea="heading"
           color="black"
         >
-          This project fetches data from{' '}
+          This project fetches <br />
+          data from{' '}
           <Link href="https://coinranking.com/" isExternal>
             <Text as="mark" backgroundColor="pink.400">
               Coinranking
@@ -45,7 +46,13 @@ export default function Main() {
               Axios
             </Text>
           </Link>{' '}
-          <Emoji symbol="🧙‍♂️" label="magician" />
+          and{' '}
+          <Link href="https://reactjs.org/docs/hooks-intro.html" isExternal>
+            <Text as="mark" backgroundColor="purple.500">
+              Hooks
+            </Text>
+          </Link>{' '}
+          <Emoji symbol="🎉" label="birthday popper" />
         </Text>
       </Grid>
 

@@ -26,8 +26,6 @@ export default function CryptoList() {
       return index !== 2 && `${coin.symbol} `;
     });
   // when false, don't show it
-  // .filter((item) => item !== false);
-  // console.log('arrOfSymbols', arrOfSymbols);
 
   const arrOfPrices = coins
     .slice(0, 11)
@@ -35,20 +33,26 @@ export default function CryptoList() {
       return index !== 2 && `${coin.price} `;
     })
     .filter((item) => typeof item !== 'boolean');
-  // console.log('arrOfPrices', arrOfPrices);
+
   // makes only 2 decimals show
   const decimalPrices = arrOfPrices.map((item) => {
     return `$${Number(item).toFixed(2)} `;
   });
 
-  const arrOfChanges = coins.slice(0, 11).map((coin, index) => {
-    return index !== 2 && `${coin.change} `;
-  });
-  // .filter((item) => item !== false);
+  const arrOfChanges = coins
+    .slice(0, 11)
+    .map((coin, index) => {
+      return index !== 2 && `${coin.change} `;
+    })
+    .filter((item) => typeof item !== 'boolean');
 
-  const arrOfImages = coins.slice(0, 11).map((coin, index) => {
-    return index !== 2 && `${coin.iconUrl} `;
+  const decimalChanges = arrOfChanges.map((item) => {
+    return `${Number(item).toFixed(1)}% `;
   });
+
+  // const arrOfImages = coins.slice(0, 11).map((coin, index) => {
+  //   return index !== 2 && `${coin.iconUrl} `;
+  // });
   // .filter((item) => item !== false);
 
   // const Photo = arrOfImages.map((image) => {
@@ -56,7 +60,7 @@ export default function CryptoList() {
   // });
 
   return (
-    <div>
+    <main>
       <Grid
         as="main"
         height="100vh"
@@ -88,23 +92,21 @@ export default function CryptoList() {
         <Box gridArea="one" w="100%" h="100%" backgroundColor="gray.200">
           <Text p={10} m={20} fontSize="xl" color="pink.700" fontWeight="bold">
             <Flex justifyContent="center" alignItems="center">
-              {/* {Photo}
-              {''} */}
               {arrOfSymbols}
             </Flex>
           </Text>
         </Box>
         <Box gridArea="two" w="100%" h="100%" backgroundColor="gray.200">
-          <Text p={10} m={20} fontSize="xl" color="gray.900" fontWeight="bold">
+          <Text p={10} m={20} fontSize="xl" fontWeight="bold" color="gray.900">
             <Flex justifyContent="center" alignItems="center">
               {decimalPrices}
             </Flex>
           </Text>
         </Box>
         <Box gridArea="three" w="100%" h="100%" backgroundColor="gray.200">
-          <Text p={10} m={20} fontSize="xl" color="gray.900" fontWeight="bold">
-            <Flex alignItems="center" justifyContent="center">
-              {arrOfChanges}
+          <Text p={10} m={20} fontSize="xl" fontWeight="bold" color="gray.900">
+            <Flex alignItems="center" justifyContent="end">
+              {decimalChanges}
             </Flex>
           </Text>
         </Box>
@@ -118,6 +120,6 @@ export default function CryptoList() {
           </Link>
         </Box>
       </Grid>
-    </div>
+    </main>
   );
 }
