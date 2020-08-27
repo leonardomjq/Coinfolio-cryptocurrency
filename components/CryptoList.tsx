@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, Box, Grid, Flex, Image, Spinner, Link } from '@chakra-ui/core';
+import { Text, Box, Grid, Flex, Spinner } from '@chakra-ui/core';
 import axios from 'axios';
-import Emoji from './Emoji';
 
 const api = 'https://api.coinranking.com/v1/public/coins';
 
@@ -16,7 +15,7 @@ export default function CryptoList() {
     fetchData();
   }, []);
 
-  console.log('Returned Coins: ', coins);
+  // console.log('Returned Coins: ', coins);
 
   const arrOfSymbols = coins
     // shows only 11 items
@@ -69,7 +68,7 @@ export default function CryptoList() {
         templateAreas="
          '. . text . .'
          '. one two three .'
-         '. . goback . .'
+         '. . . . .'
        "
         justifyContent="center"
         alignItems="center"
@@ -109,15 +108,6 @@ export default function CryptoList() {
               {decimalChanges}
             </Flex>
           </Text>
-        </Box>
-        <Box gridArea="goback" w="100%" marginTop={20}>
-          <Link href="/">
-            <Text>
-              <Flex justifyContent="center" alignItems="center">
-                Go back {''} <Emoji symbol="🏓" label="ping pong racket" />
-              </Flex>
-            </Text>
-          </Link>
         </Box>
       </Grid>
     </main>
