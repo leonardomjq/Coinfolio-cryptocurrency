@@ -1,25 +1,18 @@
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/core';
 
-export default function Block({
-  props,
-  backgroundColor,
-  color,
-  fontSize,
-  children,
-}) {
+export default function Block({ backgroundColor, color, fontSize, children }) {
   return (
     <Flex
-      justify="center"
+      margin={5}
       align="center"
+      justify="center"
       h="80vh"
       backgroundColor={backgroundColor ? backgroundColor : ''}
     >
-      <Flex w="100%" margin={5} align="center" justify="center">
-        <Text fontSize={fontSize} fontWeight="700" color={color ? color : ''}>
-          {children}
-        </Text>
-      </Flex>
+      <Text fontSize={fontSize} fontWeight="700" color={color ? color : ''}>
+        {children}
+      </Text>
     </Flex>
   );
 }

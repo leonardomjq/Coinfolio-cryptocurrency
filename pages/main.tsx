@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Link, Stack, Checkbox } from '@chakra-ui/core';
+import { Text, Link } from '@chakra-ui/core';
 
 import Emoji from '../components/Emoji';
 import Hero from '../components/Hero';
@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <main>
       <Hero />
-      <Block fontSize="58px">
+      <Block fontSize="58px" backgroundColor="" color="">
         It has some basic{' '}
         <Link href="https://www.typescriptlang.org/" isExternal>
           <Text as="mark" backgroundColor="blue.500">
@@ -37,13 +37,8 @@ export default function Main() {
         <Emoji symbol="🦄" label="unicorn emoji" /> <br />
         do the API fetching
       </Block>
-
-      <Block backgroundColor="" color="" fontSize="25px">
-        <Milestone />
-      </Block>
-
+      <Milestone />
       <CryptoList />
-
       <GoBackBtn />
     </main>
   );
