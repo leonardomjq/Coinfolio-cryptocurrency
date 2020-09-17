@@ -1,4 +1,4 @@
-# Coinfolio 🏳️‍🌈 - Cryptocurrency Portfolio
+# Coinfolio 🏳️‍🌈 - Cryptocurrency Portfolio.
 
 Running on Nextjs, using Typescript and Chakra UI design system. [Check demo here](https://coinfolio.vercel.app/).
 
