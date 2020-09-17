@@ -1,6 +1,6 @@
-# Coinfolio - Cryptocurrency Portfolio 🏳️‍🌈
+# Coinfolio 🏳️‍🌈 - Cryptocurrency Portfolio
 
-### Running on Nextjs, with Typescript and a design system called Chakra UI.
+### Running on Nextjs, using Typescript and Chakra UI design system.
 
 ### Future updates: 
 ☐ Change cryptocurrency color based on percentual. <br />
