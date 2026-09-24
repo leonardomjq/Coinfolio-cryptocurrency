@@ -15,8 +15,6 @@ export default function CryptoList() {
     fetchData();
   }, []);
 
-  // console.log('Returned Coins: ', coins);
-
   const arrOfSymbols = coins
     // shows only 11 items
     .slice(0, 11)
